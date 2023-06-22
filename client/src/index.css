@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,400;1,500;1,700;1,900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  scroll-behavior: smooth;
+}
+
+.icon_dash {
+  position: relative;
+}
+
+.icon_dash::after {
+  margin-bottom: 3px;
+  content: '';
+  position: absolute;
+  top: 43px;
+  right: 50%;
+  transform: translateX(50%);
+  padding: 0 0 8px;
+  width: 50px;
+  border-bottom: 2px solid #c5c6c9;
+  transition: all 0.16s ease-in-out;
+}
+
+.icon_dash:hover:after {
+  border-color: #1dbf73;
+  width: 80px;
+}
+
+.left-arrow-category {
+  top: 50%;
+  left: 0%;
+  transform: translate(-10%, 30%);
+}
+
+.right-arrow-category {
+  top: 50%;
+  right: 0%;
+  transform: translate(10%, 30%);
+}
+
+.left-arrow-project {
+  top: 50%;
+  left: 0%;
+  transform: translate(-10%, -20%);
+}
+
+.right-arrow-project {
+  top: 50%;
+  right: 0%;
+  transform: translate(10%, -20%);
+}
+
+.bottom-animation {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bottom-animation:hover {
+  background-color: #f1f1f2;
+}
+
+.toggle {
+  position: relative;
+}
+
+.toggle input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: relative;
+  display: block;
+  cursor: pointer;
+  background-color: #333;
+  transition: 0.4s;
+  width: 48px;
+  height: 24px;
+}
+.slider:before {
+  content: '';
+  position: absolute;
+  height: 16.5px;
+  width: 16.5px;
+  background-color: #fff;
+  transition: 0.4s;
+  top: 3.5px;
+  left: 4px;
+}
+
+input:checked + .slider {
+  background-color: #1dbf73;
+}
+
+input:checked + .slider::before {
+  transform: translateX(24px);
+}
+.slider.round {
+  border-radius: 50px;
+}
+.slider.round::before {
+  border-radius: 50%;
+}
